@@ -162,6 +162,7 @@ storage "file" {
 }
 ```
 
+
 ![Screenshot from 2025-06-20 17-50-33](https://github.com/user-attachments/assets/9f9ef7ae-1393-4879-998b-2597b798c22f)
 
 
@@ -183,12 +184,15 @@ Step 1: Create the Vault Data Directory (if it doesn't exist)
 ```
  sudo mkdir -p /var/lib/vault
 ```
+
+
 Step 2: Set the Correct Ownership
 
 ```
 
  sudo chown -R vault:vault /var/lib/vault
 ```
+
 
 Step 3: Restart Vault
 
@@ -199,7 +203,7 @@ Step 3: Restart Vault
 
 ### 4. Access from Browser via ip address
 
-🧭 Step 1: Open Vault in Browser
+##### 🧭 Step 1: Open Vault in Browser
 
 Go to:
 
@@ -210,24 +214,29 @@ Go to:
 
 You’ll be redirected to the Vault initialization page.
 
-🔑 Step 2: Initialize Vault
+##### 🔑 Step 2: Initialize Vault
 
 For testing or development use:
+
 - Key Shares: 1
 - Key Threshold: 1
   
 ![Screenshot from 2025-06-20 17-51-55](https://github.com/user-attachments/assets/f37bdd52-f0ce-41e2-9689-845da1833902)
 
-📄 Step 3: Save Root Token and Unseal Key
+
+##### 📄 Step 3: Save Root Token and Unseal Key
+
 
 ![Screenshot from 2025-06-20 17-52-23](https://github.com/user-attachments/assets/32c45380-5e9e-43d3-8d72-52ea29887588)
 
-🔓 Step 4: Unseal the Vault
+
+##### 🔓 Step 4: Unseal the Vault
 
 Enter the Unseal Key shown in the previous step. Once the threshold is met (e.g., 1 of 1 keys), Vault will be unsealed and ready for use.
 
-🖥️ Step 5: Access the Vault Dashboard
+##### 🖥️ Step 5: Access the Vault Dashboard
 
-After unsealing, you'll see the Vault Dashboard
+After unsealing, you'll see the Vault Dashboard like this
+
 
 ![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/38df9d1e-c15e-4dd0-8fd7-25f1e7ca08f5)
