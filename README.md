@@ -8,6 +8,10 @@ Vault is a tool that helps you store and manage sensitive information like:
 
 ![DigitalVaultNEw](https://github.com/user-attachments/assets/af27d076-4873-4594-8d50-e050d168749e)
 
+
+
+# Installation Steps for Vault on Ubuntu Server:
+
 ## To install HashiCorp Vault on Ubuntu, follow these steps:
 
 ### ✅ Step 1: Update System
