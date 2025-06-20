@@ -223,14 +223,11 @@ For testing or development use:
   
 ![Screenshot from 2025-06-20 17-51-55](https://github.com/user-attachments/assets/f37bdd52-f0ce-41e2-9689-845da1833902)
 
-
-##### 📄 Step 3: Save Root Token and Unseal Key
-
+##### 📄 Step 3: Save Root Token and Unseal Key using download button
 
 ![Screenshot from 2025-06-20 17-52-23](https://github.com/user-attachments/assets/32c45380-5e9e-43d3-8d72-52ea29887588)
 
-
-##### 🔓 Step 4: Unseal the Vault
+##### 🔓 Step 4: Unseal the Vault by entering the downloaded keys
 
 Enter the Unseal Key shown in the previous step. Once the threshold is met (e.g., 1 of 1 keys), Vault will be unsealed and ready for use.
 
@@ -240,3 +237,22 @@ After unsealing, you'll see the Vault Dashboard like this
 
 
 ![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/38df9d1e-c15e-4dd0-8fd7-25f1e7ca08f5)
+
+
+# Monitors Implemented for Testing Vault service:
+
+# Monitors Implemented
+
+- Health Endpoint Check
+Verifies that the Vault health API endpoint is reachable and returning the expected status, indicating overall service health.
+
+- Seal Status Check
+Continuously checks whether the Vault is in a sealed or unsealed state, which is crucial for accessing.
+
+- Token Authentication Check
+Validates token-based authentication by sending requests using a known token to ensure that identity-based access controls are functioning correctly.
+
+- Connectivity Check
+Confirms network-level connectivity to the Vault server, ensuring it is accessible from the monitoring host and there are no connectivity disruptions.
+
+
