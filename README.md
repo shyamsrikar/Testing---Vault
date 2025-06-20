@@ -59,7 +59,7 @@ After Connecting:
 
 
 
-# 🛠️ Installation Steps for Vault on Ubuntu Server
+# 🛠️ Installation Steps for Vault on Ubuntu Server After Connecting to the Instance
 
 ## To install HashiCorp Vault on Ubuntu, follow these steps:
 
