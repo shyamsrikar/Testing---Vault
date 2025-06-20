@@ -15,14 +15,19 @@ Vault is a tool that helps you store and manage sensitive information like:
 ## Before installing Vault, you need a server to run it. Here’s how to set up an Ubuntu server on AWS:
 - Login to AWS Console and go to EC2 Dashboard.
 - Click "Launch Instance".
+  ![Screenshot from 2025-06-20 17-32-14](https://github.com/user-attachments/assets/161b82dc-f2ac-4194-a8a5-336b85956e85)
 - Choose AMI: Select Ubuntu Server 22.04 LTS (HVM), SSD Volume Type.
+ ![Screenshot from 2025-06-20 17-32-46](https://github.com/user-attachments/assets/f00bd5de-9cbd-4c89-b948-d9d65ebbed8f)
 - Instance Type: Choose t2.micro (free tier) or a higher type if needed.
 - Key Pair: Select or create a key pair to access your server.
+![Screenshot from 2025-06-20 17-33-17](https://github.com/user-attachments/assets/80931634-8d27-4915-8d2e-59f88e6fa074)
 - Network Settings:
 Allow SSH (port 22)
 Allow Custom TCP on port 8200 (needed for Vault UI)
+![Screenshot from 2025-06-20 17-33-58](https://github.com/user-attachments/assets/f1ab607f-976f-4cf0-a771-edd341766f8e)
 - Launch Instance.
 - After it’s running, connect to it using:
+![Screenshot from 2025-06-20 17-34-47](https://github.com/user-attachments/assets/a7f7c34a-2b50-4af7-bcde-fb7587c7fd4f)
 
 ```
  ssh -i your-key.pem ubuntu@<your-public-ip>
