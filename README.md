@@ -56,24 +56,28 @@ After Connecting:
 ## To install HashiCorp Vault on Ubuntu, follow these steps:
 
 ### ✅ Step 1: Update System
+
 Run a command to update the list of software packages and upgrade them to the latest version.
 
 ```
  sudo apt update && sudo apt upgrade -y
 ```
 ### ✅ Step 2: Install Required Dependencies
+
 Install tools like wget, gnupg, and software-properties-common which are needed to securely add and manage software from external sources
 
 ```
  sudo apt install -y wget gnupg software-properties-common
 ```
 ### ✅ Step 3: Add HashiCorp GPG Key
+
 Add the GPG security key from HashiCorp so Ubuntu can trust the Vault package during installation.
 
 ```
  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
 ```
 ### ✅ Step 4: Add the HashiCorp APT Repository
+
 Add Vault’s official software source (repository) to your system so that you can install Vault directly from it.
 
 ```
@@ -81,6 +85,7 @@ Add Vault’s official software source (repository) to your system so that you c
 sudo tee /etc/apt/sources.list.d/hashicorp.list
 ```
 ### ✅ Step 5: Install Vault
+
 Update your system again to include the new repository and then install Vault using the package manager.
 
 ```
@@ -91,6 +96,7 @@ Update your system again to include the new repository and then install Vault us
 
 
  ### ✅ Step 6: Verify Installation
+ 
  Run a command to check if Vault was installed correctly.
 
  ```
@@ -102,9 +108,13 @@ You should see something like:
  Vault v1.x.x
 ```
 ### ✅ Access Vault via Web UI
+
 ## To use Vault in a web browser:
+
 To access HashiCorp Vault using your public IP, follow these steps carefully. This setup assumes you're running Vault on an Ubuntu server that has a public IP 
+
 #### 1. Edit the Vault Configuration File
+
 Open the Vault config file and make sure it allows the web UI and listens on all IP addresses (so it works via your public IP).
 
 ```
@@ -128,6 +138,7 @@ storage "file" {
 
 
 🔒 Note: Disabling TLS is insecure for production. Use TLS certificates when exposing Vault over the internet.
+
 ### 2. Restart the Vault Service
 
 ```
@@ -135,6 +146,7 @@ storage "file" {
 sudo systemctl restart vault
 ```
 ### 3. ✅ Solution: Fix Permissions for Vault Storage Directory
+
 Step 1: Create the Vault Data Directory (if it doesn't exist)
 
 ```
@@ -152,11 +164,32 @@ Step 3: Restart Vault
 ```
 ### 4. Access from Browser via ip address
 
+🧭 Step 1: Open Vault in Browser
+
+Go to:
 ```
  http://<your-public-ip>:8200/ui
 ```
-![Screenshot from 2025-06-20 17-52-23](https://github.com/user-attachments/assets/9b36629a-d122-43e3-9f39-0147a45e62ea)
+You’ll be redirected to the Vault initialization page.
 
-![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/6e336821-b898-40b9-a641-ce8657cd2548)
+🔑 Step 2: Initialize Vault
 
+For testing or development use:
+- Key Shares: 1
+- Key Threshold: 1
+  
+![Screenshot from 2025-06-20 17-51-55](https://github.com/user-attachments/assets/f37bdd52-f0ce-41e2-9689-845da1833902)
 
+📄 Step 3: Save Root Token and Unseal Key
+
+![Screenshot from 2025-06-20 17-52-23](https://github.com/user-attachments/assets/32c45380-5e9e-43d3-8d72-52ea29887588)
+
+🔓 Step 4: Unseal the Vault
+
+Enter the Unseal Key shown in the previous step. Once the threshold is met (e.g., 1 of 1 keys), Vault will be unsealed and ready for use.
+
+🖥️ Step 5: Access the Vault Dashboard
+
+After unsealing, you'll see the Vault Dashboard
+
+![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/38df9d1e-c15e-4dd0-8fd7-25f1e7ca08f5)
