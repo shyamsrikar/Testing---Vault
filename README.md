@@ -5,3 +5,4 @@ Vault is a tool that helps you store and manage sensitive information like:
 - API keys
 - Certificates
 - Database credentials
+``` apt update -y ```
