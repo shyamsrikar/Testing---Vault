@@ -10,6 +10,26 @@ Vault is a tool that helps you store and manage sensitive information like:
 
 
 
+
+
+## Before installing Vault, you need a server to run it. Here’s how to set up an Ubuntu server on AWS:
+- Login to AWS Console and go to EC2 Dashboard.
+- Click "Launch Instance".
+- Choose AMI: Select Ubuntu Server 22.04 LTS (HVM), SSD Volume Type.
+- Instance Type: Choose t2.micro (free tier) or a higher type if needed.
+- Key Pair: Select or create a key pair to access your server.
+- Network Settings:
+Allow SSH (port 22)
+Allow Custom TCP on port 8200 (needed for Vault UI)
+- Launch Instance.
+- After it’s running, connect to it using:
+
+  ```
+  ssh -i your-key.pem ubuntu@<your-public-ip>
+```
+
+
+
 # 🛠️ Installation Steps for Vault on Ubuntu Server
 
 ## To install HashiCorp Vault on Ubuntu, follow these steps:
