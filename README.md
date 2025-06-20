@@ -3,6 +3,7 @@
 ## 🔐 What is Vault?
 
 Vault is a tool that helps you store and manage sensitive information like:
+
 - Passwords
 - API keys
 - Certificates
@@ -15,6 +16,7 @@ Vault is a tool that helps you store and manage sensitive information like:
 
 
 ## Before installing Vault, you need a server to run it. Here’s how to set up an Ubuntu server on AWS:
+
 - Login to AWS Console and go to EC2 Dashboard.
 - Click "Launch Instance".
   
