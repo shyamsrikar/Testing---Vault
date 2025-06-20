@@ -50,7 +50,7 @@ Allow Custom TCP on port 8200 (needed for Vault UI)
   
 ![Screenshot from 2025-06-20 17-34-47](https://github.com/user-attachments/assets/a7f7c34a-2b50-4af7-bcde-fb7587c7fd4f)
 
-
+## Replace with actual public ip of instance
 ```
  ssh -i your-key.pem ubuntu@<your-public-ip>
 ```
