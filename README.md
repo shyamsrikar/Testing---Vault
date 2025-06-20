@@ -24,8 +24,8 @@ Allow Custom TCP on port 8200 (needed for Vault UI)
 - Launch Instance.
 - After it’s running, connect to it using:
 
-  ```
-  ssh -i your-key.pem ubuntu@<your-public-ip>
+```
+ ssh -i your-key.pem ubuntu@<your-public-ip>
 ```
 
 
