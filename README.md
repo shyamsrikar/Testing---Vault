@@ -19,7 +19,7 @@ Vault is a tool that helps you store and manage sensitive information like:
 
 - 1) Login to AWS Console and go to EC2 Dashboard.
      
-- 2)Click "Launch Instance".
+- 2) Click "Launch Instance".
   
   ![Screenshot from 2025-06-20 17-32-14](https://github.com/user-attachments/assets/161b82dc-f2ac-4194-a8a5-336b85956e85)
   
