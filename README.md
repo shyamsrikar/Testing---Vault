@@ -243,16 +243,16 @@ After unsealing, you'll see the Vault Dashboard like this
 
 # Monitors Implemented
 
-- Health Endpoint Check:
-       Verifies that the Vault health API endpoint is reachable and returning the expected status, indicating overall service health.
+### Health Endpoint Check:
+- Verifies that the Vault health API endpoint is reachable and returning the expected status, indicating overall service health.
 
-- Seal Status Check:
-       Continuously checks whether the Vault is in a sealed or unsealed state, which is crucial for accessing.
+### Seal Status Check:
+- Continuously checks whether the Vault is in a sealed or unsealed state, which is crucial for accessing.
 
-- Token Authentication Check:
-       Validates token-based authentication by sending requests using a known token to ensure that identity-based access controls are functioning correctly.
+### Token Authentication Check:
+- Validates token-based authentication by sending requests using a known token to ensure that identity-based access controls are functioning correctly.
 
-- Connectivity Check:
-       Confirms network-level connectivity to the Vault server, ensuring it is accessible from the monitoring host and there are no connectivity disruptions.
+### Connectivity Check:
+- Confirms network-level connectivity to the Vault server, ensuring it is accessible from the monitoring host and there are no connectivity disruptions.
 
 
