@@ -238,23 +238,59 @@ After unsealing, you'll see the Vault Dashboard like this
 
 ![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/38df9d1e-c15e-4dd0-8fd7-25f1e7ca08f5)
 
-## Storing a password/Key in the Vault using CLI
+# Creating and storing a key in Valut:
 
+### Enable KV Secrets Engine
+- Go to Secrets Engines → Enable new engine
+- Select “KV”, leave path as secret, click Next → Enable Engine
+  
+ ![Screenshot from 2025-06-20 18-40-09](https://github.com/user-attachments/assets/8cad012a-ba9e-407f-b137-85b4d8ddd131)
 
+### Add a Key
+- Go to Secrets Engines → secret/
+- Click Create secret
+- Path: myapp
+- Key: apikey, Value: abc123
+- Click Save
+  
+![Screenshot from 2025-06-20 18-41-39](https://github.com/user-attachments/assets/2d350b44-b71b-4b01-bda3-53b5a1fd3ae1)
+
+  
+### View the Secret  
+- Click on secret/myapp to view or edit it later
+  
+![Screenshot from 2025-06-20 18-41-54](https://github.com/user-attachments/assets/b4fe4c6c-640e-4817-8116-afae1efb5887)
+
+  
 # Monitors Implemented for Testing Vault service:
 
-# Monitors Implemented
+# Monitors Implemented:
+
+![Screenshot from 2025-06-20 18-18-46](https://github.com/user-attachments/assets/2f23fa1f-923e-4361-ae37-1dcda28215ef)
+
 
 ### Health Endpoint Check:
 - Verifies that the Vault health API endpoint is reachable and returning the expected status, indicating overall service health.
 
+  ![Screenshot from 2025-06-20 18-19-54](https://github.com/user-attachments/assets/bac2733c-92f5-402a-955f-5f788fcac4af)
+
+
 ### Seal Status Check:
 - Continuously checks whether the Vault is in a sealed or unsealed state, which is crucial for accessing.
+
+![Screenshot from 2025-06-20 18-19-44](https://github.com/user-attachments/assets/ed9353f2-cc6e-4593-a2ee-cf92f98ac3b6)
+
 
 ### Token Authentication Check:
 - Validates token-based authentication by sending requests using a known token to ensure that identity-based access controls are functioning correctly.
 
+![Screenshot from 2025-06-20 18-19-34](https://github.com/user-attachments/assets/1762683b-bd20-4e23-a233-efd311b76942)
+
 ### Connectivity Check:
 - Confirms network-level connectivity to the Vault server, ensuring it is accessible from the monitoring host and there are no connectivity disruptions.
 
+![Screenshot from 2025-06-20 18-19-25](https://github.com/user-attachments/assets/888831a0-d099-4bb9-af98-79a71db3a516)
 
+
+# Conclusion:
+- All the monitors are running successfully after passing the environment variables for vault service.
