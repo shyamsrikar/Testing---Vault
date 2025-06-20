@@ -17,28 +17,31 @@ Vault is a tool that helps you store and manage sensitive information like:
 
 ## Before installing Vault, you need a server to run it. Here’s how to set up an Ubuntu server on AWS:
 
-- Login to AWS Console and go to EC2 Dashboard.
-- Click "Launch Instance".
+- 1) Login to AWS Console and go to EC2 Dashboard.
+     
+- 2)Click "Launch Instance".
   
   ![Screenshot from 2025-06-20 17-32-14](https://github.com/user-attachments/assets/161b82dc-f2ac-4194-a8a5-336b85956e85)
   
-- Choose AMI: Select Ubuntu Server 24.04 LTS (HVM), SSD Volume Type.
+- 3) Choose AMI: Select Ubuntu Server 24.04 LTS (HVM), SSD Volume Type.
   
   ![Screenshot from 2025-06-20 17-44-38](https://github.com/user-attachments/assets/899a5b2a-f392-498c-87ba-07cd83a71bd7)
 
-- Instance Type: Choose t2.micro (free tier) or a higher type if needed.
-- Key Pair: Select or create a key pair to access your server.
+- 4) Instance Type: Choose t2.micro (free tier) or a higher type if needed.
+     
+- 5) Key Pair: Select or create a key pair to access your server.
   
 ![Screenshot from 2025-06-20 17-33-17](https://github.com/user-attachments/assets/80931634-8d27-4915-8d2e-59f88e6fa074)
 
-- Network Settings:
+- 6) Network Settings:
 Allow SSH (port 22)
 Allow Custom TCP on port 8200 (needed for Vault UI)
 
 ![Screenshot from 2025-06-20 17-33-58](https://github.com/user-attachments/assets/f1ab607f-976f-4cf0-a771-edd341766f8e)
 
-- Launch Instance.
-- After it’s running, connect to it using:
+- 7) Launch Instance.
+     
+- 8) After it’s running, connect to it using:
   
 ![Screenshot from 2025-06-20 17-34-47](https://github.com/user-attachments/assets/a7f7c34a-2b50-4af7-bcde-fb7587c7fd4f)
 
@@ -59,39 +62,49 @@ After Connecting:
 
 Run a command to update the list of software packages and upgrade them to the latest version.
 
+
 ```
  sudo apt update && sudo apt upgrade -y
 ```
+
 ### ✅ Step 2: Install Required Dependencies
 
 Install tools like wget, gnupg, and software-properties-common which are needed to securely add and manage software from external sources
 
+
 ```
  sudo apt install -y wget gnupg software-properties-common
 ```
+
 ### ✅ Step 3: Add HashiCorp GPG Key
 
 Add the GPG security key from HashiCorp so Ubuntu can trust the Vault package during installation.
 
+
 ```
  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
 ```
+
 ### ✅ Step 4: Add the HashiCorp APT Repository
 
 Add Vault’s official software source (repository) to your system so that you can install Vault directly from it.
+
 
 ```
  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
 sudo tee /etc/apt/sources.list.d/hashicorp.list
 ```
+
 ### ✅ Step 5: Install Vault
 
 Update your system again to include the new repository and then install Vault using the package manager.
+
 
 ```
  sudo apt update
  sudo apt install vault -y
 ```
+
 ![Screenshot from 2025-06-20 17-48-37](https://github.com/user-attachments/assets/3aa6524c-4f3b-449b-bdf4-91b9f9532edd)
 
 
@@ -99,14 +112,18 @@ Update your system again to include the new repository and then install Vault us
  
  Run a command to check if Vault was installed correctly.
 
+
  ```
   vault --version
 ```
+
 You should see something like:
+
 
 ```
  Vault v1.x.x
 ```
+
 ### ✅ Access Vault via Web UI
 
 ## To use Vault in a web browser:
@@ -117,10 +134,13 @@ To access HashiCorp Vault using your public IP, follow these steps carefully. Th
 
 Open the Vault config file and make sure it allows the web UI and listens on all IP addresses (so it works via your public IP).
 
+
 ```
  sudo nano /etc/vault.d/vault.hcl
 ```
+
 Make sure the listener block is configured like this:
+
 
 ```
  ui = true
@@ -134,6 +154,7 @@ storage "file" {
   path = "/var/lib/vault/data"
 }
 ```
+
 ![Screenshot from 2025-06-20 17-50-33](https://github.com/user-attachments/assets/9f9ef7ae-1393-4879-998b-2597b798c22f)
 
 
@@ -141,13 +162,16 @@ storage "file" {
 
 ### 2. Restart the Vault Service
 
+
 ```
  sudo systemctl daemon-reexec
 sudo systemctl restart vault
 ```
+
 ### 3. ✅ Solution: Fix Permissions for Vault Storage Directory
 
 Step 1: Create the Vault Data Directory (if it doesn't exist)
+
 
 ```
  sudo mkdir -p /var/lib/vault
@@ -155,21 +179,28 @@ Step 1: Create the Vault Data Directory (if it doesn't exist)
 Step 2: Set the Correct Ownership
 
 ```
+
  sudo chown -R vault:vault /var/lib/vault
 ```
+
 Step 3: Restart Vault
+
 
 ```
  sudo systemctl restart vault
 ```
+
 ### 4. Access from Browser via ip address
 
 🧭 Step 1: Open Vault in Browser
 
 Go to:
+
+
 ```
  http://<your-public-ip>:8200/ui
 ```
+
 You’ll be redirected to the Vault initialization page.
 
 🔑 Step 2: Initialize Vault
