@@ -11,7 +11,9 @@ Vault is a tool that helps you store and manage sensitive information like:
 
 ![DigitalVaultNEw](https://github.com/user-attachments/assets/af27d076-4873-4594-8d50-e050d168749e)
 
-
+```
+ apt update -yhvjjjjjjjjjjjjevjwmfjhegvjbfvjkebfkeb vkernvkbesjv mbsdkv sdbhvjsvhfmwe fkf
+```
 
 
 
