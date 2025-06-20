@@ -22,16 +22,20 @@ Vault is a tool that helps you store and manage sensitive information like:
 - 2) Click "Launch Instance".
   
   ![Screenshot from 2025-06-20 17-32-14](https://github.com/user-attachments/assets/161b82dc-f2ac-4194-a8a5-336b85956e85)
+
   
 - 3) Choose AMI: Select Ubuntu Server 24.04 LTS (HVM), SSD Volume Type.
   
   ![Screenshot from 2025-06-20 17-44-38](https://github.com/user-attachments/assets/899a5b2a-f392-498c-87ba-07cd83a71bd7)
 
+
 - 4) Instance Type: Choose t2.micro (free tier) or a higher type if needed.
+
      
 - 5) Key Pair: Select or create a key pair to access your server.
   
 ![Screenshot from 2025-06-20 17-33-17](https://github.com/user-attachments/assets/80931634-8d27-4915-8d2e-59f88e6fa074)
+
 
 - 6) Network Settings:
 Allow SSH (port 22)
@@ -39,15 +43,18 @@ Allow Custom TCP on port 8200 (needed for Vault UI)
 
 ![Screenshot from 2025-06-20 17-33-58](https://github.com/user-attachments/assets/f1ab607f-976f-4cf0-a771-edd341766f8e)
 
+
 - 7) Launch Instance.
      
 - 8) After it’s running, connect to it using:
   
 ![Screenshot from 2025-06-20 17-34-47](https://github.com/user-attachments/assets/a7f7c34a-2b50-4af7-bcde-fb7587c7fd4f)
 
+
 ```
  ssh -i your-key.pem ubuntu@<your-public-ip>
 ```
+
 After Connecting:
 
 ![Screenshot from 2025-06-20 17-39-44](https://github.com/user-attachments/assets/54012e0a-79c1-457e-b8a4-8dd9926fe3b3)
