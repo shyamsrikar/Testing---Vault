@@ -131,13 +131,13 @@ You should see something like:
  Vault v1.x.x
 ```
 
-### ✅ Access Vault via Web UI
+## ✅ Access Vault via Web UI
 
 ## To use Vault in a web browser:
 
 To access HashiCorp Vault using your public IP, follow these steps carefully. This setup assumes you're running Vault on an Ubuntu server that has a public IP 
 
-#### 1. Edit the Vault Configuration File
+### 1. Edit the Vault Configuration File
 
 Open the Vault config file and make sure it allows the web UI and listens on all IP addresses (so it works via your public IP).
 
@@ -203,7 +203,7 @@ Step 3: Restart Vault
 
 ### 4. Access from Browser via ip address
 
-##### 🧭 Step 1: Open Vault in Browser
+#### 🧭 Step 1: Open Vault in Browser
 
 Go to:
 
@@ -214,7 +214,7 @@ Go to:
 
 You’ll be redirected to the Vault initialization page.
 
-##### 🔑 Step 2: Initialize Vault
+#### 🔑 Step 2: Initialize Vault
 
 For testing or development use:
 
@@ -223,15 +223,15 @@ For testing or development use:
   
 ![Screenshot from 2025-06-20 17-51-55](https://github.com/user-attachments/assets/f37bdd52-f0ce-41e2-9689-845da1833902)
 
-##### 📄 Step 3: Save Root Token and Unseal Key using download button
+#### 📄 Step 3: Save Root Token and Unseal Key using download button
 
 ![Screenshot from 2025-06-20 17-52-23](https://github.com/user-attachments/assets/32c45380-5e9e-43d3-8d72-52ea29887588)
 
-##### 🔓 Step 4: Unseal the Vault by entering the downloaded keys
+#### 🔓 Step 4: Unseal the Vault by entering the downloaded keys
 
 Enter the Unseal Key shown in the previous step. Once the threshold is met (e.g., 1 of 1 keys), Vault will be unsealed and ready for use.
 
-##### 🖥️ Step 5: Access the Vault Dashboard
+#### 🖥️ Step 5: Access the Vault Dashboard
 
 After unsealing, you'll see the Vault Dashboard like this
 
