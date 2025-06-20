@@ -17,18 +17,22 @@ Vault is a tool that helps you store and manage sensitive information like:
 - Click "Launch Instance".
   
   ![Screenshot from 2025-06-20 17-32-14](https://github.com/user-attachments/assets/161b82dc-f2ac-4194-a8a5-336b85956e85)
-- Choose AMI: Select Ubuntu Server 22.04 LTS (HVM), SSD Volume Type.
   
- ![Screenshot from 2025-06-20 17-32-46](https://github.com/user-attachments/assets/f00bd5de-9cbd-4c89-b948-d9d65ebbed8f)
+- Choose AMI: Select Ubuntu Server 24.04 LTS (HVM), SSD Volume Type.
+  
+  ![Screenshot from 2025-06-20 17-44-38](https://github.com/user-attachments/assets/899a5b2a-f392-498c-87ba-07cd83a71bd7)
+
 - Instance Type: Choose t2.micro (free tier) or a higher type if needed.
 - Key Pair: Select or create a key pair to access your server.
   
 ![Screenshot from 2025-06-20 17-33-17](https://github.com/user-attachments/assets/80931634-8d27-4915-8d2e-59f88e6fa074)
+
 - Network Settings:
 Allow SSH (port 22)
 Allow Custom TCP on port 8200 (needed for Vault UI)
 
 ![Screenshot from 2025-06-20 17-33-58](https://github.com/user-attachments/assets/f1ab607f-976f-4cf0-a771-edd341766f8e)
+
 - Launch Instance.
 - After it’s running, connect to it using:
   
@@ -38,6 +42,7 @@ Allow Custom TCP on port 8200 (needed for Vault UI)
  ssh -i your-key.pem ubuntu@<your-public-ip>
 ```
 After Connecting:
+
 ![Screenshot from 2025-06-20 17-39-44](https://github.com/user-attachments/assets/54012e0a-79c1-457e-b8a4-8dd9926fe3b3)
 
 
@@ -78,6 +83,9 @@ Update your system again to include the new repository and then install Vault us
  sudo apt update
  sudo apt install vault -y
 ```
+![Screenshot from 2025-06-20 17-48-37](https://github.com/user-attachments/assets/3aa6524c-4f3b-449b-bdf4-91b9f9532edd)
+
+
  ### ✅ Step 6: Verify Installation
  Run a command to check if Vault was installed correctly.
 
@@ -112,6 +120,9 @@ storage "file" {
   path = "/var/lib/vault/data"
 }
 ```
+![Screenshot from 2025-06-20 17-50-33](https://github.com/user-attachments/assets/9f9ef7ae-1393-4879-998b-2597b798c22f)
+
+
 🔒 Note: Disabling TLS is insecure for production. Use TLS certificates when exposing Vault over the internet.
 ### 2. Restart the Vault Service
 
@@ -140,3 +151,8 @@ Step 3: Restart Vault
 ```
  http://<your-public-ip>:8200/ui
 ```
+![Screenshot from 2025-06-20 17-52-23](https://github.com/user-attachments/assets/9b36629a-d122-43e3-9f39-0147a45e62ea)
+
+![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/6e336821-b898-40b9-a641-ce8657cd2548)
+
+
