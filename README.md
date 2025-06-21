@@ -236,7 +236,7 @@ After unsealing, you'll see the Vault Dashboard like this
 
 ![Screenshot from 2025-06-20 17-53-56](https://github.com/user-attachments/assets/38df9d1e-c15e-4dd0-8fd7-25f1e7ca08f5)
 
-# Creating and storing a key in Valut:
+# Creating and storing a key in Vault:
 
 ### Enable KV Secrets Engine
 - Go to Secrets Engines → Enable new engine
