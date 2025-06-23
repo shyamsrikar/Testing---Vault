@@ -2,7 +2,7 @@
 
 ## 🔐 What is Vault?
 
-Vault is a tool that helps you store and manage sensitive information like:
+Vault is a tool that helps us to store and manage sensitive information like:
 
 - Passwords
 - API keys
