@@ -1,4 +1,4 @@
-# 🧪 Testing - Vault
+# Testing - Vault
 
 ## 🔐 What is Vault?
 
